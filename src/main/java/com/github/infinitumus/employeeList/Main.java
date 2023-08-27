@@ -14,7 +14,7 @@ public class Main {
 
 
     static {
-        try (FileInputStream fileInputStream= new FileInputStream("src/main/resources/app.properties")){
+        try (InputStream fileInputStream= ClassLoader.getSystemResourceAsStream("app.properties")){
             Properties properties = new Properties();
             properties.load(fileInputStream);
             DIR = properties.getProperty("save.dir");
